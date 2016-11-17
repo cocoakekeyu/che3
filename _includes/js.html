@@ -8,19 +8,92 @@
     <script src="{{ "/js/jquery.easing.min.js" }}"></script>
     <script src="{{ "/js/classie.js" }}"></script>
     <script src="{{ "/js/cbpAnimatedHeader.js" }}"></script>
+    <script src="{{ "/static/js/swfobject.js" }}"></script>
+    <script src="http://cdn.bootcss.com/lightbox2/2.9.0/js/lightbox.min.js"></script>
+    <script src="http://cdn.bootcss.com/aplayer/1.5.8/APlayer.min.js"></script>
+    
+
+    <script type="text/javascript">
+        var flashvars = {};
+        var params = {};
+        params.quality = "high";
+        params.bgcolor = "#ffffff";
+        params.allowscriptaccess = "sameDomain";
+        params.allowfullscreen = "true";
+        params.base=".";
+        params.wmode="Opaque";
+        var attributes = {};
+        attributes.id = "pano";
+        attributes.name = "pano";
+        attributes.align = "middle";
+        swfobject.embedSWF(
+            "/static/swf/che3_panorama.swf", "flashContent", 
+            "100%", "480", 
+            "9.0.0", "expressInstall.swf", 
+            flashvars, params, attributes);
+    </script>
+
+    <script>
+        lightbox.option({
+          'resizeDuration': 200,
+          'wrapAround': true
+        })
+    </script>
+
+
+    <script>
+        var option = {
+            element: document.getElementById('player1'),                       // Optional, player element
+            narrow: false,                                                     // Optional, narrow style
+            autoplay: true,                                                    // Optional, autoplay song(s), not supported by mobile browsers
+            showlrc: 0,                                                        // Optional, show lrc, can be 0, 1, 2, see: ###With lrc
+            mutex: true,                                                       // Optional, pause other players when this player playing
+            theme: '#e6d0b2',                                                  // Optional, theme color, default: #b7daff
+            mode: 'circulation',                                                    // Optional, play mode, can be `random` `single` `circulation`(loop) `order`(no loop), default: `circulation`
+            preload: 'metadata',                                               // Optional, the way to load music, can be 'none' 'metadata' 'auto', default: 'auto'
+            listmaxheight: '513px',                                             // Optional, max height of play list
+            music: [{                                                           // Required, music info, see: ###With playlist
+                title: '那些花儿',                                          // Required, music title
+                author: '朴树',                          // Required, music author
+                url: '/static/music/flower.mp3',  // Required, music url
+                pic: '/static/img/music-pic/flower.jpg',  // Optional, music picture
+            },
+            {
+                title: '我的天空',                                          // Required, music title
+                author: '南征北战',                          // Required, music author
+                url: '/static/music/oursky.mp3',  // Required, music url
+                pic: '/static/img/music-pic/oursky.jpg',  // Optional, music picture
+            },
+            {
+                title: '那些年',                                          // Required, music title
+                author: '胡夏',                          // Required, music author
+                url: '/static/music/theyear.mp3',  // Required, music url
+                pic: '/static/img/music-pic/theyear.jpg',  // Optional, music picture
+            }]
+        }
+
+        var ap = new APlayer(option);
+    </script>
+        
+
+
 
     <!-- Contact Form JavaScript -->
+    <!--
     <script src="{{ "/js/jqBootstrapValidation.js" }}"></script>
     {% if site.contact == "static" %}
     <script src="{{ "/js/contact_me_static.js" }}"></script>
     {% else %}
      <script src="{{ "/js/contact_me.js" }}"></script>
     {% endif %}
+    -->
 
     <!-- Custom Theme JavaScript -->
     <script src="{{ "/js/freelancer.js" }}"></script>
 
+    <!--
     {% if site.contact == "disqus" %}
     <!-- Disqus Stuff -->
     {% include js_disqus.html %}
     {% endif %}
+    -->

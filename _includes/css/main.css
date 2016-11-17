@@ -80,9 +80,14 @@ hr.star-primary:after {
 }
 
 header {
+    /*
     text-align: center;
     color: #fff;
     background: #{{ site.color.primary }};
+    */
+    height: 1100px;
+    width: 100%;
+    background: url(/static/img/celebo.jpg) 100% 0 no-repeat;
 }
 
 header .container {
@@ -98,6 +103,8 @@ header img {
 header .intro-text .name {
     display: block;
     text-transform: uppercase;
+    text-align: center;
+    color: rgba(26, 36, 47, 0.68);
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 2em;
     font-weight: 700;
@@ -106,6 +113,9 @@ header .intro-text .name {
 header .intro-text .skills {
     font-size: 1.25em;
     font-weight: 300;
+}
+
+header .header-back {
 }
 
 @media(min-width:768px) {
@@ -153,6 +163,7 @@ header .intro-text .skills {
     font-weight: 700;
 }
 
+
 .navbar a:focus {
     outline: 0;
 }
@@ -165,9 +176,15 @@ header .intro-text .skills {
     outline: 0;
 }
 
+.navbar-fixed-top.navbar-shrink {
+
+    background-color: #2c3e50;
+}
+
 .navbar-default,
 .navbar-inverse {
     border: 0;
+    background-color: transparent;
 }
 
 section {
