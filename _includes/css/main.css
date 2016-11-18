@@ -85,9 +85,11 @@ header {
     color: #fff;
     background: #{{ site.color.primary }};
     */
-    height: 1100px;
+    height: 856px;
     width: 100%;
-    background: url(/static/img/celebo.jpg) 100% 0 no-repeat;
+    background-image: url(http://ogubulpdq.bkt.clouddn.com/celebo-1920x856.jpg);
+    background-position: 50%;
+    background-repeat: no-repeat;
 }
 
 header .container {
