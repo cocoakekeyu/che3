@@ -8,24 +8,17 @@
     <script src="{{ "/js/jquery.easing.min.js" }}"></script>
     <script src="{{ "/js/classie.js" }}"></script>
     <script src="{{ "/js/cbpAnimatedHeader.js" }}"></script>
-    <script src="{{ "/static/js/swfobject.js" }}"></script>
-    <script src="{{ "/static/js/pano2vr_player.js" }}"></script>
+    <script src="http://ogubulpdq.bkt.clouddn.com/swfobject.js"></script>
+    <script src="http://ogubulpdq.bkt.clouddn.com/pano2vr_player.js"></script>
 
     <script src="http://cdn.bootcss.com/lightbox2/2.9.0/js/lightbox.min.js"></script>
     <script src="http://cdn.bootcss.com/aplayer/1.5.8/APlayer.min.js"></script>
     
 
     <script type="text/javascript">
-        // check for CSS3 3D transformations and WebGL
-		if (ggHasHtml5Css3D() || ggHasWebGL()) {
-    		// use HTML5 panorama
-	
-			// create the panorama player with the container
-			pano=new pano2vrPlayer("flashContent");
-			pano.readConfigUrl("/static/che3_panorama_out.xml");
-			// hide the URL bar on the iPhone
-			//setTimeout(function() { hideUrlBar(); }, 10);
-		} else 
+        function hideUrlBar() {
+			}
+
 		if (swfobject.hasFlashPlayerVersion("10.0.0")) {
             var flashvars = {};
             var params = {};
@@ -45,6 +38,17 @@
                 "9.0.0", "expressInstall.swf", 
                 flashvars, params, attributes);
         }
+        // check for CSS3 3D transformations and WebGL
+        else 
+		if (ggHasHtml5Css3D() || ggHasWebGL()) {
+    		// use HTML5 panorama
+	
+			// create the panorama player with the container
+			pano=new pano2vrPlayer("flashContent");
+			pano.readConfigUrl("http://ogubulpdq.bkt.clouddn.com/che3_panorama_out.xml");
+			// hide the URL bar on the iPhone
+			setTimeout(function() { hideUrlBar(); }, 10);
+		}
     </script>
 
     <script>
